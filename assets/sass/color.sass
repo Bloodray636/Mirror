@@ -1,0 +1,104 @@
+$black: #191919
+$white: #fff
+$line: $black
+$border: 2px solid $white
+$border-btn: 2px solid $black
+$border-btn-second: $border
+$shadow: 0px 0px 20px 1px #D1D1D1
+$shadow-hover: 0px 0px 10px 0px #D1D1D1
+$border-input: 1px solid $black
+$placeholder: #969696
+$bg-footer: #ECEDEF
+$nav-shadow: 0px 0px 8px 0px #a19f9f
+$border-nav: 1px solid #F0F0F0
+    
+body
+    background: $white!important
+
+a
+    color: $black!important
+
+.btn
+    color: $white !important
+    background: $black!important
+    border: $border-btn!important
+    &::before
+        background: $white!important
+        color: $black!important
+    &:hover
+        color: $black!important
+        background: $black!important
+        border: $border-btn!important
+
+.btn.btn-second
+    color: $white !important
+    background: transparent!important
+    border: $border-btn-second!important
+    &::before
+        background: $white!important
+        color: $black!important
+    &:hover
+        color: $black!important
+        background: transparent
+        border: $border-btn-second
+
+header
+    background-color: $white
+    box-shadow: $nav-shadow
+    .contact-top
+        border-bottom: $border-nav
+    .contact-top-item
+        svg
+            fill: $black
+    .navbar
+        .nav-link
+            color: $black
+            &:hover
+                color: $black
+
+.individual-order
+    .order-item
+        svg
+            fill: $black
+
+.certificates
+    .card
+        box-shadow: $shadow
+    .card:hover
+        box-shadow: $shadow-hover
+    .card-header, .card-footer, .card-body, .card
+        background-color: transparent
+        svg
+            fill: $black
+
+.contact
+    .contact-item
+        svg
+            fill: $black
+    form
+        input, textarea
+            border: $border-input
+            color: $black
+            &:placeholder
+                color: $placeholder!important
+            &:focus
+                border: $border-input
+        input[type="checkbox"]:checked
+            background-color: $black
+            border: $border-input!important
+            &:focus
+                border: $border-input
+        .form-check-label
+            a
+                border-bottom: $border-input
+    
+footer
+    background-color: $bg-footer
+    svg
+            fill: $black
+    .list-group
+        .list-group-item
+            background-color: transparent
+    .copyright
+        a
+            border-bottom: $border-input

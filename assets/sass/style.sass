@@ -1,0 +1,269 @@
+@import "fs.sass"
+@import "color.sass"
+
+
+$m: 5
+$ml: 8
+$p: 3
+$p-input: 16px 20px
+$p-textarea: $p-input
+$p-card: 24px
+$radius: 0
+    
+*
+    margin: 0
+    padding: 0
+    box-sizing: border-box
+
+.company, .gallery, .individual-order, .certificates, .contact
+    margin: $m * 20px 0
+
+%title
+    h2
+      margin-bottom: $m * 10px  
+
+%btn
+    .btn
+        padding: 0 $p * 10px
+        border-radius: $radius
+        height: 44px
+        position: relative
+        overflow: hidden
+        z-index: 3        
+        &::before,
+        &::after
+            content: ''
+            position: absolute
+            left: 0
+            top: 0
+            right: 0
+            bottom: 0
+            height: 100%
+            background: transparent
+            z-index: 1
+            transition: all 0.5s
+            pointer-events: none
+        &::before
+            z-index: -1
+            transform: translate3D(-101%, 0, 0)
+        &:hover
+            transition: all 0.7s
+        &:hover::before
+            transform: translate3D(0, 0, 0)
+
+a
+    text-decoration: none!important
+    
+header
+    padding-top: 10px
+    padding-bottom: 23px
+    .contact-top
+        padding-bottom: 10px
+        margin-bottom: 23px  
+        svg
+            margin-top: 2px
+            margin-right: $ml * 2px
+            margin-left: $ml * 5px
+    .navbar
+        .navbar-nav
+            margin: 0px 54px
+            @media screen and (max-width: 1199px)
+                &
+                    margin: 0px auto!important
+            @media screen and (max-width: 991px)
+                &
+                    margin-top: 40px!important
+        .navbar-brand
+            max-height: 50px
+            height: 100%
+            width: 200px
+            max-width: 100%
+        .nav-item
+            margin: auto
+            @media screen and (max-width: 991px)
+                &
+                    margin-bottom: 20px!important
+                    margin-left: 0px!important
+            .nav-link
+                padding: 0!important
+                text-wrap: nowrap
+        .btn-block
+            @extend %btn
+
+.carousel
+    img
+        min-height: 325px
+        max-height: 653px
+        object-fit: cover
+    h1
+        margin-bottom: $m * 6px
+        @media screen and (max-width: 991px)
+            &
+                margin-bottom: $m * 6px
+    .btn-block
+        @extend %btn
+        @media screen and (max-width: 575px)
+            .btn-block .btn.btn
+                margin-bottom: 20px!important
+                margin-left: 0px!important
+
+.company
+    .title
+        @extend %title
+    .text-block
+        p
+            line-height: 32px!important
+    .img-block 
+        img
+            object-fit: cover
+            object-position: left
+            max-height: 416px
+            height: 100%
+            @media screen and (max-width: 1399px)
+                &
+                    max-height: 512px
+            @media screen and (max-width: 1199px)
+                &
+                    max-height: 608px
+
+
+.gallery
+    .title
+        @extend %title
+    .img-block 
+        overflow: hidden
+        img
+            transition: all 0.7s
+            object-fit: cover
+            &:hover
+                transform: scale(1.2)
+    .modal-dialog
+        max-width: 426px!important
+        border-radius: $radius!important
+        border: none!important
+        .modal-content
+            border-radius: $radius!important
+        .modal-body,
+        .modal-header
+            border: none!important
+
+.individual-order
+    .title
+        @extend %title
+    .img-block 
+        img
+            object-fit: cover
+            max-height: 568px
+            height: 100%
+            @media screen and (max-width: 1199px)
+                &
+                    max-height: 668px
+    .order-item
+        margin-bottom: $m * 6px!important
+        &:last-child
+            margin-bottom: 0px!important
+        svg
+            margin-top: $m * 2px
+            min-width: 50px
+            max-width: 100%
+    .text-item
+        margin-left: $ml * 2px
+
+.certificates
+    .title
+        @extend %title
+    .card
+        padding: $p-card
+        background-image: url(../img/bg-card.jpg)
+        background-size: cover
+        background-repeat: no-repeat
+        border-radius: $radius
+        margin-bottom: $m * 6px
+        transition: .5s ease
+        max-height: 556px
+        height: 100%
+        .card-header
+            margin-bottom: $m * 8px
+            svg
+                min-width: 40px
+                max-width: 100%
+                min-height: 40px
+                max-height: 100%
+            h2
+                margin:0 $ml * 2px
+        .card-body
+            h2, h3
+                margin-bottom: $m * 4px!important
+            p
+                margin-bottom: $m * 8px!important
+
+.contact
+    .title
+        @extend %title
+    .contact-item
+        margin-bottom: $m * 8px
+        h3
+            margin-bottom: $m * 6px!important
+        svg
+            min-width: 16px
+            max-width: 100%
+            margin-right: $ml * 2px
+    form
+        input
+            border-radius: $radius
+            margin-bottom: $ml * 3px
+            height: 44px
+            padding: $p-input
+            box-shadow: none!important
+        textarea
+            resize: none!important
+            height: 126px
+            border-radius: $radius
+            margin-bottom: $ml * 3px
+            padding: $p-textarea
+            box-shadow: none!important
+        .form-check
+            margin-bottom: $ml * 3px
+            input[type="checkbox"]
+                border-radius: $radius
+                width: 20px!important
+                height: 20px!important
+                transition: all 0.5s ease
+        .form-check-label
+            margin-left: $ml * 2px
+        .btn-block
+            @extend %btn
+    .img-block 
+        img
+            object-fit: cover
+            object-position: left
+            max-height: 378px
+            height: 100%
+            @media screen and (max-width: 1199px)
+                &
+                    max-height: 333px
+            @media screen and (max-width: 991px)
+                &
+                    max-height: 516px
+
+footer
+    margin-top: $m * 10px
+    padding-top: $m * 12px
+    padding-bottom: $m * 4px
+    svg
+        margin-top: $m * 6px
+        min-width: 16px
+        max-width: 100%
+        margin-right: $ml * 2px
+    .nav-title
+        margin-bottom: $m * 8px
+    .list-group
+        .list-group-item
+            margin-bottom: $m * 6px
+            svg
+                margin-top: 0px
+                min-width: 16px
+                max-width: 100%
+                margin-right: $ml * 2px
+    .copyright
+        margin-top: $m * 12px
